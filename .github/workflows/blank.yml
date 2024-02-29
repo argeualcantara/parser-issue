@@ -31,4 +31,4 @@ jobs:
         parsed_data: ${{ steps.parse.outputs.payload }}
       run: |
         echo '${{ env.parsed_data }}'
-        echo '${{ github.event.issue.labels[0] }}'
+        echo '${{ github.event.issue.labels[0].name }}'
