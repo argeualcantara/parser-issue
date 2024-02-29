@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   issues:
-    types: ['opened']
+    types: ['opened','updated']
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,4 +31,4 @@ jobs:
         parsed_data: ${{ steps.parse.outputs.payload }}
       run: |
         echo '${{ env.parsed_data }}'
-        echo '${{ github.event.issue.labels }}'
+        echo '${{ github.event.issue.labels[0] }}'
